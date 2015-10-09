@@ -48,13 +48,14 @@
                   </div>
                   <div class="modal-footer">
                     <%= form_for @playlist do |f| %>
+                    <div class="form-group">
 
-                    <%= f.hidden_field :tracks %>
-                    <%= f.hidden_field :names %>
+                    <%= f.hidden_field :tracks%>
+                    <%= f.hidden_field :names%>
                     <%= f.hidden_field :duration%>
-                    <%= f.text_field :title, placeholder: 'name your playlist'%>
-                    <%= f.select :mood, [['Happy', 'happy'], ["Sad", 'sad'], ['Silly', 'silly'] ]%>
-                    <%= f.submit "Save" %>
+                    <%= f.text_field :title, placeholder: 'name your playlist', class: 'form-control'%>
+                    <%= f.select :mood, [['Happy', 'happy'], ["Sad", 'sad'], ['Silly', 'silly'] ], class: 'form-control'%>
+                    <%= f.submit "Save", class: 'btn btn-primary' %>
 
                     <% end %>
                   </div>
@@ -65,8 +66,7 @@
             <br>
             <br>
             <br>
-</div>
-           
+</div>        
     <footer class="podbar">
       <div class="container">
         <%= audio_tag @tracks[0], autoplay: false, controls: true, id: 'audio' %>
